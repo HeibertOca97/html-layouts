@@ -1,0 +1,133 @@
+:root {
+    --bg-pr: rgb(255, 255, 255);
+    --bg-hl: rgb(16, 82, 60);
+    --bg-l-text: rgb(32, 32, 32);
+    --bg-hl-text: rgb(223, 223, 223);
+    --bg-shadow: rgba(97, 97, 97, 0.315);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*** NAVBAR#1 ***/
+
+.navbar-1 {
+    width: 100%;
+    background-color: var(--bg-pr);
+    box-shadow: 0px 3px 8px var(--bg-shadow);
+    padding: 5px 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+
+/*** LOGOTYPE ***/
+
+.nav-logo {
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    overflow: hidden;
+    background-color: rgb(116, 116, 116);
+    animation: loadData 3s infinite;
+}
+
+@keyframes loadData {
+    0% {
+        background-color: rgb(116, 116, 116);
+    }
+    50% {
+        background-color: #ccc;
+    }
+    100% {
+        background-color: rgb(116, 116, 116);
+    }
+}
+
+.nav-logo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/*** NAVBAR - LINKS ***/
+
+.navbar-1 ul, .navbar-1 ol {
+    list-style: none;
+}
+
+.nav-link>li a {
+    display: block;
+    line-height: 2.9em;
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-decoration: none;
+    background-color: var(--bg-pr);
+    color: var(--bg-l-text);
+    transition: all 250ms ease-in-out;
+}
+
+.nav-link>li a:hover {
+    background-color: var(--bg-hl);
+    color: var(--bg-hl-text);
+}
+
+.nav-link>li {
+    float: left;
+}
+
+.nav-link li {
+    position: relative;
+}
+
+.nav-link li ul {
+    min-width: 160px;
+    position: absolute;
+    left: 0%;
+    top: 100%;
+    display: none;
+    box-shadow: 0px 3px 7px var(--bg-shadow);
+}
+
+.nav-link li:hover>ul {
+    display: block;
+}
+
+.nav-link li ul li ul {
+    left: 100%;
+    top: 0%;
+}
+
+/*** SIMBOL - LIST-CONTENT ***/
+
+.list-content {
+    position: relative;
+}
+
+.list-content::after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid var(--bg-l-text);
+    border-top: 5px solid transparent;
+    border-bottom: 5px solid transparent;
+    position: absolute;
+    right: 5px;
+    top: 18px;
+    transition: all 250ms ease-in;
+}
+
+.list-content:hover:after {
+    transform: rotate(90deg);
+    border-left: 10px solid rgb(155, 155, 155);
+}
+
+/*** Estilo de descripcion ***/
+
+.content {
+    clear: both;
+}
